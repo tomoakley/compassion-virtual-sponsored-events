@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 import ProgressTimeline from '../ProgressTimeline'
 import styles from './RoutePanel.module.css'
 
+import calculateCompletionCheckpointPercentage from '../../util/calculateCheckpointCompletionPercentage'
+
 const RoutePanel = ({
   isLastCheckpoint,
   checkpointNumber,
@@ -15,8 +17,7 @@ const RoutePanel = ({
   nextCheckpointInKm,
 }) => {
 
-  const checkpointCompletionPercentage = progressInKm > 0 ? completedDistanceInKm/(nextCheckpointInKm + progressInKm) : 1
-  //75/(100+50)
+  const checkpointCompletionPercentage = calculateCompletionCheckpointPercentage(progressInKm, nextCheckpointInKm, completedDistanceInKm)
 
   return (
     <div className={styles.container}>

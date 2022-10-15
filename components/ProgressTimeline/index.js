@@ -12,7 +12,7 @@ const ProgressTimeline = ({isLastCheckpoint, checkpointCompletionPercentage, ima
       {!isLastCheckpoint
       ? (
         <>
-          {checkpointCompletionPercentage >= 0 && <ProgressBar active={true} height={checkpointCompletionPercentage} />}
+          {checkpointCompletionPercentage > 0 && <ProgressBar active={true} height={checkpointCompletionPercentage} />}
           {checkpointCompletionPercentage < 1 && <ProgressBar active={false} />}
         </>
       )

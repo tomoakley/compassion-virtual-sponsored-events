@@ -28,16 +28,19 @@ export default function Home() {
 
       <main className={styles.main}>
         <Profile />
-        {content.map((checkpoint, i) => (
-          <RoutePanel
-            key={checkpoint.title}
-            {...checkpoint}
-            isLastCheckpoint={i + 1 === content.length}
-            checkpointNumber={i}
-            completedDistanceInKm={completedDistanceInKm}
-            nextCheckpointKm={content[i + 1]}
-          />
-        ))}
+        {content.map((checkpoint, i) => {
+          const nextCheckpoint = content[i+1]
+          return (
+            <RoutePanel
+              key={checkpoint.title}
+              {...checkpoint}
+              isLastCheckpoint={i + 1 === content.length}
+              checkpointNumber={i}
+              completedDistanceInKm={completedDistanceInKm}
+              nextCheckpointInKm={nextCheckpoint?.progressInKm}
+            />
+          )
+        })}
       </main>
     </div>
   );
