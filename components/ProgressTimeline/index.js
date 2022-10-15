@@ -8,11 +8,11 @@ import styles from './ProgressTimeline.module.css'
 const ProgressTimeline = ({isLastCheckpoint, checkpointCompletionPercentage, imageUrl}) => {
   return (
     <div className={styles.container}>
-      <ProgressCircle isActive={checkpointCompletionPercentage >= 1} imageUrl={imageUrl} />
+      <ProgressCircle isActive={checkpointCompletionPercentage > 0} imageUrl={imageUrl} />
       {!isLastCheckpoint
       ? (
         <>
-          {checkpointCompletionPercentage >= 0 && <ProgressBar active={true} height={checkpointCompletionPercentage} />}
+          {checkpointCompletionPercentage > 0 && <ProgressBar active={true} height={checkpointCompletionPercentage} />}
           {checkpointCompletionPercentage < 1 && <ProgressBar active={false} />}
         </>
       )
