@@ -4,6 +4,8 @@ import styles from '../styles/Home.module.css'
 import Header from '../components/Header/'
 import RoutePanel from '../components/RoutePanel/'
 
+import content from '../content.json'
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -15,7 +17,12 @@ export default function Home() {
       <Header />
 
       <main className={styles.main}>
-        <RoutePanel />
+        {content.map((checkpoint, i) =>
+          <RoutePanel
+            key={checkpoint.title}
+            {...checkpoint}
+            isLastCheckpoint={i+1 === content.length} />
+        )}
       </main>
 
     </div>

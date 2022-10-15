@@ -9,7 +9,7 @@ const Circle = ({isActive}) => {
 }
 
 Circle.propTypes = {
-  isActive: PropTypes.boolean
+  isActive: PropTypes.bool
 }
 
 export default Circle

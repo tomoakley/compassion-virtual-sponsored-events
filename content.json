@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Checkpoint 1",
+    "description": "the first checkpoint",
+    "imageUrl": "https://picsum.photos/200",
+    "progressInKm": 0
+  },
+  {
+    "title": "Checkpoint 2",
+    "description": "the second checkpoint",
+    "imageUrl": "https://picsum.photos/200",
+    "progressInKm": 50
+  },
+  {
+    "title": "Checkpoint 3",
+    "description": "the third checkpoint",
+    "imageUrl": "https://picsum.photos/200",
+    "progressInKm": 150
+  }
+]
