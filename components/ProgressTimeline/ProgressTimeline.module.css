@@ -1,0 +1,28 @@
+.container {
+  position: relative;
+  width: 100px;
+}
+
+.progressCircle {
+  border-radius: 100%;
+  width: 100%;
+  height: 100px;
+}
+
+.inactive {
+  background: grey;
+  border: grey solid 1px;
+}
+
+.activated {
+  background: #005EB8;
+  border: yellow solid 1px;
+}
+
+.progressBar {
+  width: 5px;
+  height: 150px;
+  margin-top: -1px;
+  position: absolute;
+  left: 50%;
+}
