@@ -30,7 +30,7 @@ const RoutePanel = ({
           }
         </h2>
         <div className={styles.routeDistance}>
-          <span className={checkpointCompletionPercentage >= 1 ? styles.completedDistance : styles.incompleteDistance}>{progressInKm}km</span> / 150km
+          <span className={checkpointCompletionPercentage >= 0 ? styles.completedDistance : styles.incompleteDistance}>{progressInKm}km</span> / 150km
         </div>
         <span>{title}</span>
       </div>
