@@ -1,0 +1,16 @@
+{
+  "name": "Compassion Virtual Challenges",
+  "theme_color": "#fff",
+  "background_color": "005eb8",
+  "display": "browser",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/icon_1024x1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    },
+  ]
+}

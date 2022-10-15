@@ -1,20 +1,36 @@
 import { useEffect, useState, useContext } from 'react';
 import Image from 'next/image';
+import PropTypes from 'prop-types'
 import { getUserActivities } from '../../data/activity';
 import { redirectToOauth } from '../../data/auth';
 import styles from './profile.module.css';
 import ActivityContext from '../../contexts/ActivityContext';
 
-export default function Profile() {
+export default function Profile({ totalChallengeDistance }) {
   const [athlete, setAthlete] = useState(null);
+  const [isDemoMode, setIsDemoMode] = useState(false);
   const [completedDistanceInKm, setCompletedDistanceInKm] =
     useContext(ActivityContext);
 
+  function getDemoData() {
+    const params = new URLSearchParams(window.location.search);
+    const km = params.get('demo_km');
+    return km;
+  }
+
   useEffect(() => {
+    const demoKm = getDemoData();
+
     const athlete = JSON.parse(localStorage.getItem('athlete'));
     setAthlete(athlete);
 
     if (!athlete) {
+      return;
+    }
+
+    if (demoKm) {
+      setIsDemoMode(true);
+      setCompletedDistanceInKm(demoKm);
       return;
     }
 
@@ -29,7 +45,7 @@ export default function Profile() {
     });
   }, []);
 
-  if (athlete == null) {
+  if (athlete == null && !isDemoMode) {
     return (
       <div className={styles.signupContainer}>
         <h2 className={styles.title}>Join the challenge</h2>
@@ -57,29 +73,38 @@ export default function Profile() {
     <div className={styles.container}>
       <div className={styles.profileImageBlock}>
         <Image
-          src={athlete.profile}
+          src={athlete?.profile}
           width={100}
           height={100}
-          alt={athlete.firstname}
+          alt={athlete?.firstname}
           objectFit="cover"
           style={{ borderRadius: '50%', 'flex-shrink': 0 }}
         />
         <div>
           <h1 className={styles.label}>
-            {athlete.firstname} {athlete.lastname}
+            {athlete?.firstname} {athlete?.lastname}
           </h1>
           <p className={styles.profileAddress}>
-            {athlete.city}, {athlete.country}
+            {athlete?.city}, {athlete?.country}
           </p>
         </div>
       </div>
       <div>
         <div>
           <span className={styles.distanceRun}>{completedDistanceInKm}km</span>
-          <span className={styles.distanceTotal}> / 150km</span>
+          <span className={styles.distanceTotal}> / {totalChallengeDistance}km</span>
         </div>
-        <span className={styles.textButton}> Add mileage</span>
-        <span className={styles.profileAddress}>{' >'}</span>
+        {completedDistanceInKm < totalChallengeDistance ? (
+          <>
+            <span className={styles.textButton}> Add mileage</span>
+            <span className={styles.profileAddress}>{' >'}</span>
+          </>
+        ) : (
+          <>
+          <span className={styles.distanceComplete}>🥳🎉🥳🎉🥳🎉🥳🎉</span>
+          </>
+        )
+        }
       </div>
       <div>
         <div>
@@ -90,4 +115,8 @@ export default function Profile() {
       </div>
     </div>
   );
+}
+
+Profile.propTypes = {
+  totalChallengeDistance: PropTypes.number
 }

@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
@@ -12,6 +12,7 @@ import content from '../content.json';
 
 export default function Home() {
   const [completedDistanceInKm, _] = useContext(ActivityContext);
+  const totalChallengeDistance = content[content.length - 1].progressInKm
 
   return (
     <div className={styles.container}>
@@ -22,12 +23,15 @@ export default function Home() {
           content="Run a virtual sponsored event for Compassion"
         />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/icon_1024x1024.png" />
+        <meta name="theme-color" content="#fff" />
       </Head>
       <Header />
-      <Hero />
+      <Hero completedChallenge={completedDistanceInKm >= totalChallengeDistance} />
 
       <main className={styles.main}>
-        <Profile />
+        <Profile totalChallengeDistance={totalChallengeDistance} />
         {content.map((checkpoint, i) => {
           const nextCheckpoint = content[i+1]
           return (

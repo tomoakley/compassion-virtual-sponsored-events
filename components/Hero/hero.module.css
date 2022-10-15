@@ -10,6 +10,15 @@
   background-position: center;
   padding: 20px;
 }
+.hero.heroChallengeComplete {
+  background-image: url('https://virtual-challenges-3053d747.cdn.memsites.com/birthday_hero_landing_desktop.png');
+  background-size: cover;
+}
+.heroCompleteOpacity {
+  background: #005EB8;
+  padding: 10px;
+  display: inline-block;
+}
 .hero button {
   border-radius: 4px;
   color: #00407A;
