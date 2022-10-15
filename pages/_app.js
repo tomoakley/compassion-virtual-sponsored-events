@@ -1,7 +1,15 @@
-import '../styles/globals.css'
+import {useState} from 'react';
+
+import ActivityContext from '../contexts/ActivityContext';
+import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  const activityHook = useState(0);
+  return (
+    <ActivityContext.Provider value = {activityHook}>
+      <Component {...pageProps} />
+    </ActivityContext.Provider>
+  );
 }
 
-export default MyApp
+export default MyApp;

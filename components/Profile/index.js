@@ -1,12 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import Image from 'next/image';
 import { getUserActivities } from '../../data/activity';
 import { redirectToOauth } from '../../data/auth';
 import styles from './profile.module.css';
+import ActivityContext from '../../contexts/ActivityContext';
 
 export default function Profile() {
   const [athlete, setAthlete] = useState(null);
-  const [activities, setActivities] = useState([]);
+  const [completedDistanceInKm, setCompletedDistanceInKm] =
+    useContext(ActivityContext);
 
   useEffect(() => {
     const athlete = JSON.parse(localStorage.getItem('athlete'));
@@ -17,7 +19,13 @@ export default function Profile() {
     }
 
     getUserActivities().then((activities) => {
-      setActivities(activities);
+      setCompletedDistanceInKm(
+        Math.floor(
+          activities.reduce((acc, activity) => {
+            return acc + activity.distance / 1000;
+          }, 0)
+        )
+      );
     });
   }, []);
 
@@ -66,15 +74,7 @@ export default function Profile() {
         </div>
       </div>
       <div>
-        <span className={styles.distanceRun}>
-          {Math.floor(
-            activities.reduce(
-              (prev, current) => prev + current.distance / 1000,
-              0
-            )
-          )}
-          km
-        </span>
+        <span className={styles.distanceRun}>{completedDistanceInKm}km</span>
         <span className={styles.distanceTotal}> / 150km</span>
       </div>
       <div>
