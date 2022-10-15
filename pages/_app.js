@@ -4,7 +4,7 @@ import ActivityContext from '../contexts/ActivityContext';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
-  const activityHook = useState(0);
+  const activityHook = useState(70);
   return (
     <ActivityContext.Provider value = {activityHook}>
       <Component {...pageProps} />
