@@ -20,7 +20,7 @@ const RoutePanel = ({
 
   return (
     <div className={styles.container}>
-      <ProgressTimeline isLastCheckpoint={isLastCheckpoint} checkpointCompletionPercentage={checkpointCompletionPercentage} />
+      <ProgressTimeline isLastCheckpoint={isLastCheckpoint} checkpointCompletionPercentage={checkpointCompletionPercentage} imageUrl={imageUrl} />
       <div className={styles.routeData}>
         <h2 className={styles.routeTitle}>
           {checkpointNumber === 0
