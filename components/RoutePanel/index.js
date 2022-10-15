@@ -19,15 +19,23 @@ const RoutePanel = ({
 
   const checkpointCompletionPercentage = calculateCompletionCheckpointPercentage(progressInKm, nextCheckpointInKm, completedDistanceInKm)
 
+  const getCheckpointName = (checkpointNo) => {
+    switch(true) {
+      case checkpointNo === 0:
+        return 'Start Point'
+      case isLastCheckpoint:
+        return 'Finish Line'
+      default:
+        return `Checkpoint ${checkpointNo}`
+    }
+  }
+
   return (
     <div className={styles.container}>
       <ProgressTimeline isLastCheckpoint={isLastCheckpoint} checkpointCompletionPercentage={checkpointCompletionPercentage} imageUrl={imageUrl} />
       <div className={styles.routeData}>
         <h2 className={styles.routeTitle}>
-          {checkpointNumber === 0
-            ? 'Start Point'
-            : `Checkpoint ${checkpointNumber}`
-          }
+          {getCheckpointName(checkpointNumber)}
         </h2>
         <div className={styles.routeDistance}>
           <span className={checkpointCompletionPercentage > 0 ? styles.completedDistance : styles.incompleteDistance}>{progressInKm}km</span> / 150km
