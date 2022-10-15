@@ -12,6 +12,8 @@
   border-style: solid;
   z-index: 100;
   position: relative;
+  background-position: center;
+  background-size: contain;
 }
 
 .inactive {
