@@ -9,7 +9,7 @@ const ProgressTimeline = ({isLastCheckpoint, checkpointCompletionPercentage, ima
   debugger
   return (
     <div className={styles.container}>
-      <ProgressCircle isActive={checkpointCompletionPercentage > ,} imageUrl={imageUrl} />
+      <ProgressCircle isActive={checkpointCompletionPercentage > 0} imageUrl={imageUrl} />
       {!isLastCheckpoint
       ? (
         <>
