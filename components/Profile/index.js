@@ -24,8 +24,6 @@ export default function Profile() {
     setAthlete(athlete);
 
     if (!athlete) {
-      setIsDemoMode(true);
-      setCompletedDistanceInKm(demoKm);
       return;
     }
 
