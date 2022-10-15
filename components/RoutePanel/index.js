@@ -11,9 +11,12 @@ const RoutePanel = ({
   description,
   imageUrl,
   progressInKm,
-  completedDistanceInKm}) => {
+  completedDistanceInKm,
+  nextCheckpointInKm,
+}) => {
 
-  const checkpointCompletionPercentage = progressInKm > 0 ? completedDistanceInKm/progressInKm : 1
+  const checkpointCompletionPercentage = progressInKm > 0 ? completedDistanceInKm/(nextCheckpointInKm + progressInKm) : 1
+  //75/(100+50)
 
   return (
     <div className={styles.container}>
@@ -40,7 +43,8 @@ RoutePanel.propTypes = {
   title: PropTypes.string,
   description: PropTypes.bool,
   completedDistanceInKm: PropTypes.number,
-  progressInKm: PropTypes.number
+  progressInKm: PropTypes.number,
+  nextCheckpointInKm: PropTypes.number
 }
 
 export default RoutePanel

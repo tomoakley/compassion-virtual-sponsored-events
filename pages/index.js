@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 
 import Header from '../components/Header/'
 import RoutePanel from '../components/RoutePanel/'
+import Profile from '../components/Profile/'
 import Hero from '../components/Hero/'
 
 import content from '../content.json'
@@ -22,6 +23,7 @@ export default function Home() {
       <Hero />
 
       <main className={styles.main}>
+        <Profile />
         {content.map((checkpoint, i) =>
           <RoutePanel
             key={checkpoint.title}
@@ -29,6 +31,7 @@ export default function Home() {
             isLastCheckpoint={i+1 === content.length}
             checkpointNumber={i}
             completedDistanceInKm={completedDistanceInKm}
+            nextCheckpointKm={content[i+1]}
           />)}
       </main>
 

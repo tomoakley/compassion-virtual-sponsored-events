@@ -1,0 +1,123 @@
+.container {
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profileImageBlock {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.label {
+  font: normal normal bold 28px NotoSans-Bold;
+  letter-spacing: 0px;
+  color: #707070;
+  padding: 0;
+  margin: 0;
+}
+
+.profileAddress {
+  font: normal normal normal 18px NotoSans;
+  letter-spacing: 0px;
+  color: #707070;
+  padding: 0;
+  margin: 0;
+}
+
+.profileImage {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.distanceRun {
+  font: normal normal bold 28px NotoSans-Bold;
+  letter-spacing: 0px;
+  color: #339526;
+}
+
+.distanceTotal {
+  font: normal normal normal 28px NotoSans;
+  letter-spacing: 0px;
+  color: #707070;
+}
+
+
+/* For signup */
+
+.signupContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 400px;
+  margin-bottom: 60px;
+}
+
+.title {
+  text-align: center;
+  font: normal normal bold 32px NotoSans-Bold;
+  letter-spacing: 0px;
+  color: #707070;
+}
+
+.border {
+  width: 122px;
+  border: 4px solid #005EB8;
+}
+
+.stepsContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
+.stepContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+
+.stepTitle {
+  text-align: center;
+  font: normal normal normal 24px NotoSans;
+  letter-spacing: 0px;
+  color: #707070;
+}
+
+.stepDivider {
+  width: 120px;
+}
+
+.stepSignup {
+  width: 220px;
+  height: 50px;
+  background: #339526 0% 0% no-repeat padding-box;
+  border-radius: 9px;
+  border: none !important;
+  
+  text-align: center;
+  font: normal normal normal 24px NotoSans;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  margin-top: 20px;
+}
+
+.stepConnect {
+  width: 220px;
+  height: 50px;
+  background: #F4871F 0% 0% no-repeat padding-box;
+  border-radius: 9px;
+  border: none !important;
+  
+  text-align: center;
+  font: normal normal normal 24px NotoSans;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  margin-top: 20px;
+}
