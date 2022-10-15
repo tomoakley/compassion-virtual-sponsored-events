@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css'
 
 import Header from '../components/Header/'
 import RoutePanel from '../components/RoutePanel/'
+import Profile from '../components/Profile/'
 
 import content from '../content.json'
 
@@ -17,6 +18,7 @@ export default function Home() {
       <Header />
 
       <main className={styles.main}>
+        <Profile />
         {content.map((checkpoint, i) =>
           <RoutePanel
             key={checkpoint.title}
