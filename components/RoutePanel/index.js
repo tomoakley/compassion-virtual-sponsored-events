@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react'
 import PropTypes from 'prop-types'
 
 import ProgressTimeline from '../ProgressTimeline'
@@ -10,6 +11,8 @@ const RoutePanel = ({
   isLastCheckpoint,
   checkpointNumber,
   title,
+  cta,
+  content,
   description,
   imageUrl,
   progressInKm,
@@ -18,6 +21,8 @@ const RoutePanel = ({
 }) => {
 
   const checkpointCompletionPercentage = calculateCompletionCheckpointPercentage(progressInKm, nextCheckpointInKm, completedDistanceInKm)
+
+  const [expanded, setExpanded] = useState(false)
 
   return (
     <div className={styles.container}>
@@ -33,6 +38,13 @@ const RoutePanel = ({
           <span className={checkpointCompletionPercentage > 0 ? styles.completedDistance : styles.incompleteDistance}>{progressInKm}km</span> / 150km
         </div>
         <span>{title}</span>
+        <div className={[styles.content, expanded ? styles.expanded : styles.collapsed].join(" ")} >
+          <span>{content}</span>
+          <div>
+            <button href={cta.link}>{cta.text}</button>
+          </div>
+        </div>
+        {checkpointCompletionPercentage===1 && <div className={styles.collapse}><a href="#" onClick={(e) =>{ e.preventDefault(); setExpanded(!expanded)}}>{expanded ? 'close' : 'open'}</a></div> }
       </div>
     </div>
   )

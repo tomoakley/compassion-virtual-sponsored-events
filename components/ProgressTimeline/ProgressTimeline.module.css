@@ -24,9 +24,18 @@
   border-color: #FFB500;
 }
 
+.expanded {
+  display:block;
+}
+
+.collapsed {
+  display:none;
+}
+
 .progressBar {
   width: 5px;
-  height: 230px;
+  top: 150px;
+  bottom: -200px;
   margin-top: -1px;
   position: absolute;
   left: 50%;

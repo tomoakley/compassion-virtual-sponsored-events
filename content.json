@@ -4,6 +4,11 @@
     "description": "Start line",
     "imageUrl": "https://virtual-challenges-3053d747.cdn.memsites.com/circle-img-1.png",
     "imageUrl_icon": "https://virtual-challenges-3053d747.cdn.memsites.com/Three%20Cs%20-%20Church-Based%20(solid%20blue).svg",
+    "content": "\"Learning from home alone is very difficult. I needed someone who could walk with me as I did my schoolwork. Having a teacher come home is so helpful to me. I also learn life skills and godliness,\" says Antony.",
+    "cta": {
+      "text": "Watch film",
+      "link": ""
+    },
     "progressInKm": 0
   },
   {
@@ -11,20 +16,41 @@
     "description": "Checkpoint 1",
     "imageUrl": "https://virtual-challenges-3053d747.cdn.memsites.com/KE_Billups%20Omido.jpg",
     "imageUrl_icon": "https://virtual-challenges-3053d747.cdn.memsites.com/Three%20Cs%20-%20Church-Based%20(solid%20blue).svg",
+    "content": "",
+    "cta": {
+      "text": "Watch film",
+      "link": ""
+    },
+    "content": "",
+    "ctaLink": "",
     "progressInKm": 50
   },
   {
     "title": "St Barnabus, Kisumu, Kenya",
     "description": "Checkpoint 2",
     "imageUrl": "https://virtual-challenges-3053d747.cdn.memsites.com/CC-KE037700165-SAwuor-38-1709.jpg",
+    "content": "",
+    "cta": {
+      "text": "Watch film",
+      "link": ""
+    },
     "imageUrl_icon": "https://virtual-challenges-3053d747.cdn.memsites.com/Three%20Cs%20-%20Church-Based%20(solid%20blue).svg",
+    "content": "",
+    "ctaLink": "",
     "progressInKm": 100
   },
   {
     "title": "Welcome Church, Kisumu, Kenya",
     "description": "Finish line",
     "imageUrl": "https://virtual-challenges-3053d747.cdn.memsites.com/CC-KE037700165-SAwuor-38-1709.jpg",
+    "content": "",
+    "cta": {
+      "text": "Watch film",
+      "link": ""
+    },
     "imageUrl_icon": "https://virtual-challenges-3053d747.cdn.memsites.com/Three%20Cs%20-%20Church-Based%20(solid%20blue).svg",
+    "content": "",
+    "ctaLink": "",
     "progressInKm": 150
   }
 ]
