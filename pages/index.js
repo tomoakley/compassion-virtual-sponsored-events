@@ -31,6 +31,7 @@ export default function Home() {
             isLastCheckpoint={i+1 === content.length}
             checkpointNumber={i}
             completedDistanceInKm={completedDistanceInKm}
+            nextCheckpointKm={content[i+1]}
           />)}
       </main>
 
