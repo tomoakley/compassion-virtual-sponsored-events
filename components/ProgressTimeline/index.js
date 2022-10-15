@@ -5,19 +5,25 @@ import ProgressCircle from './Circle'
 import ProgressBar from './ProgressBar'
 import styles from './ProgressTimeline.module.css'
 
-const ProgressTimeline = ({isLastCheckpoint}) => {
+const ProgressTimeline = ({isLastCheckpoint, checkpointCompletionPercentage}) => {
   return (
     <div className={styles.container}>
-      <ProgressCircle />
+      <ProgressCircle isActive={checkpointCompletionPercentage >= 1} />
       {!isLastCheckpoint
-      ? <ProgressBar />
+      ? (
+        <>
+          {checkpointCompletionPercentage >= 0 && <ProgressBar active={true} height={checkpointCompletionPercentage} />}
+          {checkpointCompletionPercentage < 1 && <ProgressBar active={false} />}
+        </>
+      )
       : null}
     </div>
   )
 }
 
 ProgressTimeline.propTypes = {
-  isLastCheckpoint: PropTypes.bool
+  isLastCheckpoint: PropTypes.bool,
+  checkpointCompletionPercentage: PropTypes.number
 }
 
 export default ProgressTimeline

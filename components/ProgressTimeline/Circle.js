@@ -4,7 +4,7 @@ import styles from './ProgressTimeline.module.css'
 
 const Circle = ({isActive}) => {
   return (
-    <div className={[styles.progressCircle, isActive ? styles.active : styles.inactive].join(" ")} />
+    <div className={[styles.progressCircle, isActive ? styles.activated : styles.inactive].join(" ")} />
   )
 }
 
