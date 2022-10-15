@@ -6,6 +6,7 @@ import styles from './profile.module.css';
 import ActivityContext from '../../contexts/ActivityContext';
 
 export default function Profile() {
+  const [isLoading, setIsLoading] = useState(true);
   const [athlete, setAthlete] = useState(null);
   const [completedDistanceInKm, setCompletedDistanceInKm] =
     useContext(ActivityContext);
@@ -15,6 +16,7 @@ export default function Profile() {
     setAthlete(athlete);
 
     if (!athlete) {
+      setIsLoading(false);
       return;
     }
 
@@ -26,8 +28,13 @@ export default function Profile() {
           }, 0)
         )
       );
+      setIsLoading(false);
     });
   }, []);
+
+  if (isLoading) {
+    return <div></div>;
+  }
 
   if (athlete == null) {
     return (
@@ -74,11 +81,19 @@ export default function Profile() {
         </div>
       </div>
       <div>
-        <span className={styles.distanceRun}>{completedDistanceInKm}km</span>
-        <span className={styles.distanceTotal}> / 150km</span>
+        <div>
+          <span className={styles.distanceRun}>{completedDistanceInKm}km</span>
+          <span className={styles.distanceTotal}> / 150km</span>
+        </div>
+        <span className={styles.textButton}> Add mileage</span>
+        <span className={styles.profileAddress}>{' >'}</span>
       </div>
       <div>
-        <span className={styles.label}>£1,000 raised</span>
+        <div>
+          <span className={styles.label}>£1,000 raised</span>
+        </div>
+        <span className={styles.textButton}>Donate</span>
+        <span className={styles.profileAddress}>{' >'}</span>
       </div>
     </div>
   );

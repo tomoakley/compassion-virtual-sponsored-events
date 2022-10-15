@@ -106,6 +106,7 @@
   letter-spacing: 0px;
   color: #FFFFFF;
   margin-top: 20px;
+  cursor: pointer;
 }
 
 .stepConnect {
@@ -120,4 +121,15 @@
   letter-spacing: 0px;
   color: #FFFFFF;
   margin-top: 20px;
+  cursor: pointer;
+}
+
+.textButton {
+  text-decoration: underline;
+  font: normal normal normal 18px NotoSans;
+  letter-spacing: 0px;
+  color: #707070;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
 }
