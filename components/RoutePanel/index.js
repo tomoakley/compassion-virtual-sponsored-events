@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import ProgressTimeline from '../ProgressTimeline'
 import styles from './RoutePanel.module.css'
 
-const RoutePanel = ({isLastCheckpoint, checkpointNumber, title, description, imageUrl}) => {
+const RoutePanel = ({isLastCheckpoint, checkpointNumber, title, description, imageUrl, progressInKm}) => {
   return (
     <div className={styles.container}>
       <ProgressTimeline isLastCheckpoint={isLastCheckpoint} />
@@ -15,6 +15,10 @@ const RoutePanel = ({isLastCheckpoint, checkpointNumber, title, description, ima
             : `Checkpoint ${checkpointNumber}`
           }
         </h2>
+        <div className={styles.routeDistance}>
+          <span className={styles.completedDistance}>{progressInKm}km</span> / 150km
+        </div>
+        <span>{title}</span>
       </div>
     </div>
   )
