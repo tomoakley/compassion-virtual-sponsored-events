@@ -44,6 +44,10 @@
   color: #707070;
 }
 
+.distanceComplete {
+  font-size: 22px;
+}
+
 
 /* For signup */
 
@@ -100,7 +104,7 @@
   background: #339526 0% 0% no-repeat padding-box;
   border-radius: 9px;
   border: none !important;
-  
+
   text-align: center;
   font: normal normal normal 24px NotoSans;
   letter-spacing: 0px;
@@ -115,7 +119,7 @@
   background: #F4871F 0% 0% no-repeat padding-box;
   border-radius: 9px;
   border: none !important;
-  
+
   text-align: center;
   font: normal normal normal 24px NotoSans;
   letter-spacing: 0px;

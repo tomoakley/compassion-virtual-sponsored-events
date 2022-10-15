@@ -1,11 +1,12 @@
 import { useEffect, useState, useContext } from 'react';
 import Image from 'next/image';
+import PropTypes from 'prop-types'
 import { getUserActivities } from '../../data/activity';
 import { redirectToOauth } from '../../data/auth';
 import styles from './profile.module.css';
 import ActivityContext from '../../contexts/ActivityContext';
 
-export default function Profile() {
+export default function Profile({ totalChallengeDistance }) {
   const [athlete, setAthlete] = useState(null);
   const [isDemoMode, setIsDemoMode] = useState(false);
   const [completedDistanceInKm, setCompletedDistanceInKm] =
@@ -91,10 +92,19 @@ export default function Profile() {
       <div>
         <div>
           <span className={styles.distanceRun}>{completedDistanceInKm}km</span>
-          <span className={styles.distanceTotal}> / 150km</span>
+          <span className={styles.distanceTotal}> / {totalChallengeDistance}km</span>
         </div>
-        <span className={styles.textButton}> Add mileage</span>
-        <span className={styles.profileAddress}>{' >'}</span>
+        {completedDistanceInKm < totalChallengeDistance ? (
+          <>
+            <span className={styles.textButton}> Add mileage</span>
+            <span className={styles.profileAddress}>{' >'}</span>
+          </>
+        ) : (
+          <>
+          <span className={styles.distanceComplete}>🥳🎉🥳🎉🥳🎉🥳🎉</span>
+          </>
+        )
+        }
       </div>
       <div>
         <div>
@@ -105,4 +115,8 @@ export default function Profile() {
       </div>
     </div>
   );
+}
+
+Profile.propTypes = {
+  totalChallengeDistance: PropTypes.number
 }
