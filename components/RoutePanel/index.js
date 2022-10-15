@@ -47,8 +47,8 @@ const RoutePanel = ({
         <span>{title}</span>
         <div className={[styles.content, expanded ? styles.expanded : styles.collapsed].join(" ")} >
           <span>{content}</span>
-          <div>
-            <button href={cta.link}>{cta.text}</button>
+          <div style={{marginTop: '20px'}}>
+            <a className={styles.button} href={cta.link}>{cta.text}</a>
           </div>
         </div>
         {checkpointCompletionPercentage===1 && <div className={styles.collapse}><a href="#" onClick={(e) =>{ e.preventDefault(); setExpanded(!expanded)}}>{expanded ? 'close' : 'open'}</a></div> }
