@@ -1,3 +1,4 @@
+import {useState} from 'react'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
@@ -8,6 +9,8 @@ import Profile from '../components/Profile/'
 import content from '../content.json'
 
 export default function Home() {
+  const [completedDistanceInKm, setCompletedDistanceInKm] = useState(40)
+
   return (
     <div className={styles.container}>
       <Head>
@@ -25,6 +28,7 @@ export default function Home() {
             {...checkpoint}
             isLastCheckpoint={i+1 === content.length}
             checkpointNumber={i}
+            completedDistanceInKm={completedDistanceInKm}
           />)}
       </main>
 

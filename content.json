@@ -1,20 +1,20 @@
 [
   {
     "title": "Sindo Baptist Church, Koma Bay, Kenya",
-    "description": "the first checkpoint",
-    "imageUrl": "https://picsum.photos/200",
+    "description": "Start line",
+    "imageUrl": "https://virtual-challenges-3053d747.cdn.memsites.com/Three%20Cs%20-%20Church-Based%20(solid%20blue).svg",
     "progressInKm": 0
   },
   {
-    "title": "Sindo Baptist Church, Koma Bay, Kenya",
-    "description": "the second checkpoint",
-    "imageUrl": "https://picsum.photos/200",
+    "title": "Deliverance Church, Kendu Bay, Kenya",
+    "description": "Checkpoint 1",
+    "imageUrl": "https://virtual-challenges-3053d747.cdn.memsites.com/Three%20Cs%20-%20Church-Based%20(solid%20blue).svg",
     "progressInKm": 50
   },
   {
-    "title": "Sindo Baptist Church, Koma Bay, Kenya",
-    "description": "the third checkpoint",
-    "imageUrl": "https://picsum.photos/200",
+    "title": "St Barnabus, Kisumu, Kenya",
+    "description": "Checkpoint 2",
+    "imageUrl": "https://virtual-challenges-3053d747.cdn.memsites.com/Three%20Cs%20-%20Church-Based%20(solid%20blue).svg",
     "progressInKm": 150
   }
 ]
