@@ -6,7 +6,6 @@ import styles from './profile.module.css';
 import ActivityContext from '../../contexts/ActivityContext';
 
 export default function Profile() {
-  const [isLoading, setIsLoading] = useState(true);
   const [athlete, setAthlete] = useState(null);
   const [completedDistanceInKm, setCompletedDistanceInKm] =
     useContext(ActivityContext);
@@ -16,7 +15,6 @@ export default function Profile() {
     setAthlete(athlete);
 
     if (!athlete) {
-      setIsLoading(false);
       return;
     }
 
@@ -28,13 +26,8 @@ export default function Profile() {
           }, 0)
         )
       );
-      setIsLoading(false);
     });
   }, []);
-
-  if (isLoading) {
-    return <div></div>;
-  }
 
   if (athlete == null) {
     return (
