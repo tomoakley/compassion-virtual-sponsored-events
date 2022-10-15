@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css'
 
 import Header from '../components/Header/'
 import RoutePanel from '../components/RoutePanel/'
+import Hero from '../components/Hero/'
 
 import content from '../content.json'
 
@@ -15,6 +16,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <Hero />
 
       <main className={styles.main}>
         {content.map((checkpoint, i) =>

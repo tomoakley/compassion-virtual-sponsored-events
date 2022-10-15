@@ -1,0 +1,43 @@
+.hero {
+  text-align: center;
+  color: white;
+  top: 0px;
+  left: 0px;
+  background: #00407a;
+  background-image: url('https://virtual-challenges-3053d747.cdn.memsites.com/desktop_hero_country_kenya_v3.png');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+}
+.hero button {
+  border-radius: 4px;
+  color: #00407A;
+  font-size: 20px;
+  padding:10px;
+  margin:10px;
+  background: white;
+  border: none;
+  cursor: pointer;
+}
+.hero h1 {
+  font-size: 50px;
+  margin: 10px;
+}
+
+.bottommargin {
+  margin: 10px;
+}
+
+.bigletters {
+  font-size: 40px;
+  font-weight: lighter;
+}
+
+.yellowLine {
+  display: inline-block;
+  width: 150px;
+  height: 3px;
+  margin: 10px;
+  background: yellow;
+}
