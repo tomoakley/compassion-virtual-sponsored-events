@@ -10,13 +10,13 @@
 }
 
 .inactive {
-  background: grey;
-  border: grey solid 1px;
+  background: #707070;
+  border: #707070 solid 1px;
 }
 
 .activated {
-  background: #005EB8;
-  border: yellow solid 1px;
+  background: #0FFB500;
+  border: #0FFB500 solid 1px;
 }
 
 .progressBar {

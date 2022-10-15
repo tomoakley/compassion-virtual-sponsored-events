@@ -21,8 +21,9 @@ export default function Home() {
           <RoutePanel
             key={checkpoint.title}
             {...checkpoint}
-            isLastCheckpoint={i+1 === content.length} />
-        )}
+            isLastCheckpoint={i+1 === content.length}
+            checkpointNumber={i}
+          />)}
       </main>
 
     </div>

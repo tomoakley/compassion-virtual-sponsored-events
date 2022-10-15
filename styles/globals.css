@@ -14,3 +14,17 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: 'NotoSans-Bold';
+  src: url('../asset/NotoSans/NotoSans-Bold.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NotoSans';
+  src: url('../asset/NotoSans/NotoSans-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
