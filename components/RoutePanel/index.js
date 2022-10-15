@@ -19,7 +19,6 @@ const RoutePanel = ({
 
   const checkpointCompletionPercentage = calculateCompletionCheckpointPercentage(progressInKm, nextCheckpointInKm, completedDistanceInKm)
 
-  debugger
   return (
     <div className={styles.container}>
       <ProgressTimeline isLastCheckpoint={isLastCheckpoint} checkpointCompletionPercentage={checkpointCompletionPercentage} imageUrl={imageUrl} />

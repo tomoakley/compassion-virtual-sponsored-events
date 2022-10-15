@@ -14,7 +14,7 @@ const calculateCompletionCheckpointPercentage = (checkpointA, checkpointB = 0, c
     }
 
     // scenario 3: completed both checkpointA and checkpointB
-    case completedDistance > checkpointA && completedDistance > checkpointB: {
+    case completedDistance >= checkpointA && completedDistance >= checkpointB: {
       return 1
     }
 
