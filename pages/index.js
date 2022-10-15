@@ -23,6 +23,9 @@ export default function Home() {
           content="Run a virtual sponsored event for Compassion"
         />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/icon_1024x1024.png" />
+        <meta name="theme-color" content="#fff" />
       </Head>
       <Header />
       <Hero completedChallenge={completedDistanceInKm >= totalChallengeDistance} />
